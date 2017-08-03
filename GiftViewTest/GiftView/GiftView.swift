@@ -104,14 +104,14 @@ class GiftView:UIView{
     fileprivate  func initCollectView(keyBoardHeight:CGFloat){
 
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize.init(width: 80, height: 120)
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.itemSize = CGSize.init(width: Int(UIScreen.main.bounds.width - 3) / 4, height: 120)
+        flowLayout.minimumLineSpacing = 1
+        flowLayout.minimumInteritemSpacing = 1
 
         for index in 0 ..< Int(giftPageCount){
 
             let collectionView = UICollectionView.init(frame: CGRect.init(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: (keyBoardHeight - sendBarHeight)), collectionViewLayout: flowLayout)
-            collectionView.backgroundColor = UIColor.clear
+            collectionView.backgroundColor = UIColor.gray
             collectionView.tag = index
 
             collectionView.delegate = self
