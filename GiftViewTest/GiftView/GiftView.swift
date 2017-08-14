@@ -52,28 +52,27 @@ class GiftView:UIView{
     **/
     func initGiftView(giftViewHeight:CGFloat,giftbeans : [GiftBean],deletage : GiftViewDelegate){
 
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
         vc = deletage as? UIViewController
 
         //半透明的黑色view
         let bgView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: giftViewHeight))
-        bgView.backgroundColor = UIColor.black
-        bgView.alpha = 0.7
+        bgView.backgroundColor = UIColor.white
         self.addSubview(bgView)
 
         self.deletage = deletage
         self.giftbeans = giftbeans
 
-        if(giftbeans.count <= 8){
+        if(giftbeans.count <= 10){
             giftPageCount = 1
         }else{
 
-            if(giftbeans.count % 8 == 0){
+            if(giftbeans.count % 10 == 0){
 
-                giftPageCount = CGFloat(giftbeans.count / 8)
+                giftPageCount = CGFloat(giftbeans.count / 10)
             }else{
 
-                giftPageCount = CGFloat(giftbeans.count / 8 + 1)
+                giftPageCount = CGFloat(giftbeans.count / 10 + 1)
             }
         }
 
@@ -104,16 +103,16 @@ class GiftView:UIView{
     fileprivate  func initCollectView(keyBoardHeight:CGFloat){
 
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize.init(width: Int(UIScreen.main.bounds.width - 3) / 4, height: 120)
+        flowLayout.itemSize = CGSize.init(width: Int(UIScreen.main.bounds.width - 4) / 5, height: 120)
         flowLayout.minimumLineSpacing = 1
         flowLayout.minimumInteritemSpacing = 1
 
         for index in 0 ..< Int(giftPageCount){
 
             let collectionView = UICollectionView.init(frame: CGRect.init(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: (keyBoardHeight - sendBarHeight)), collectionViewLayout: flowLayout)
-            collectionView.backgroundColor = UIColor.gray
+            collectionView.backgroundColor = UIColor.white
             collectionView.tag = index
-
+            collectionView.isScrollEnabled = false
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(UINib.init(nibName: "GiftCollectionViewCell", bundle: nil),  forCellWithReuseIdentifier: "GiftCollectionViewCell")
@@ -147,7 +146,13 @@ class GiftView:UIView{
     fileprivate func initCloseButton(){
         closeButton.frame = CGRect.init(x: screenWidth - 22, y: 5, width: 20, height: 20)
         closeButton.setTitle("✕", for: .normal)
+        closeButton.setTitleColor(UIColor.gray, for: .normal)
         closeButton.addTarget(self, action: #selector(dissmissGiftBoard), for: .touchUpInside)
+
+        //黑色的线
+        let line = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 0.5))
+        line.backgroundColor = UIColor.init(red: 230.0/255, green: 230.0/255, blue: 230.0/255, alpha: 1)
+        self.addSubview(line)
         self.addSubview(closeButton)
     }
 
@@ -162,7 +167,7 @@ class GiftView:UIView{
         rechargebutton?.frame =  CGRect.init(x: 5, y: keyBoradHeight - sendBarHeight + (sendBarHeight / 2 - rechargebuttonSize.height / 2 ) - 5 , width: rechargebuttonSize.width, height: rechargebuttonSize.height)
         rechargebutton?.setTitle("(金币:3200,钻石:200)", for: .normal)
         rechargebutton?.setImage(UIImage.init(named: "chongzhi"), for: .normal)
-        rechargebutton?.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        rechargebutton?.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         self.addSubview(rechargebutton!)
     }
 
@@ -180,7 +185,7 @@ class GiftView:UIView{
         self.addSubview(pageControl)
 
         let uiSendButtonSize = CGSize.init(width: 45, height: 25)
-        sendButton.frame =  CGRect.init(x: screenWidth - uiSendButtonSize.width-10, y: keyBoradHeight - sendBarHeight + (sendBarHeight / 2 - uiSendButtonSize.height / 2 ) - 5 , width: uiSendButtonSize.width, height: uiSendButtonSize.height)
+        sendButton.frame =  CGRect.init(x: screenWidth - uiSendButtonSize.width-10, y: keyBoradHeight - sendBarHeight + (sendBarHeight / 2 - uiSendButtonSize.height / 2 ) - 2 , width: uiSendButtonSize.width, height: uiSendButtonSize.height)
         sendButton.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         sendButton.titleLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         sendButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 11)
@@ -253,18 +258,24 @@ extension GiftView :UICollectionViewDelegate,UICollectionViewDataSource{
 //            }
 //        }
 
-        return 8
+        return 10
     }
 
     //返回自定义的cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GiftCollectionViewCell", for: indexPath as IndexPath) as! GiftCollectionViewCell
-        
-        if(giftbeans.count > 0){
-            let currentIndex = collectionView.tag * 8 + indexPath.row
-            cell.giftImage.image = giftbeans[currentIndex].giftImage
-        }
+            let giftType = giftbeans[indexPath.row].tradeType == .Diamonds ? "钻石":"金币"
+            cell.giftImage.image = giftbeans[indexPath.row].giftImage
+            cell.giftName.text = giftbeans[indexPath.row].giftname
+            cell.giftPrice.text = "\(Int(giftbeans[indexPath.row].giftPrice))\(giftType)"
+
+
+//        if(giftbeans.count > 0){
+//            let currentIndex = collectionView.tag * 10 + indexPath.row
+//            cell.giftImage.image = giftbeans[currentIndex].giftImage
+//        }
+
 
         return cell
     }

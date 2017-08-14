@@ -20,12 +20,14 @@ class GiftBean{
     public let giftImage : UIImage  //礼物图片资源
     public let giftPrice : Double   //礼物价格
     public let tradeType : TradeType  //礼物交易类型(金币和钻石)
+    public let giftname : String // 礼物名称
 
-    init(giftId : Int,giftImage : UIImage,giftPrice : Double,tradeType : TradeType){
+    init(giftId : Int,giftImage : UIImage,giftPrice : Double,giftName : String,tradeType : TradeType){
         self.giftId = giftId
         self.giftImage = giftImage
         self.giftPrice = giftPrice
         self.tradeType = tradeType
+        self.giftname = giftName
     }
 
 }

@@ -15,19 +15,19 @@ class ViewController: UIViewController ,GiftViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         let gift1 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, tradeType: .Diamonds)
-         let gift2 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, tradeType: .Diamonds)
-         let gift3 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, tradeType: .Diamonds)
-         let gift4 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, tradeType: .Diamonds)
-         let gift5 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, tradeType: .Diamonds)
+         let gift1 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, giftName: "大蛋糕", tradeType: .Diamonds)
+         let gift2 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, giftName: "礼盒", tradeType: .Diamonds)
+         let gift3 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, giftName: "大蛋糕", tradeType: .Diamonds)
+         let gift4 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, giftName: "礼盒", tradeType: .Diamonds)
+         let gift5 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, giftName: "大蛋糕", tradeType: .Diamonds)
 
-        let gift6 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, tradeType: .Diamonds)
-        let gift7 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, tradeType: .Diamonds)
-        let gift8 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, tradeType: .Diamonds)
-        let gift9 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, tradeType: .Diamonds)
-        let gift10 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, tradeType: .Diamonds)
+        let gift6 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, giftName: "大蛋糕", tradeType: .Diamonds)
+        let gift7 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, giftName: "礼盒", tradeType: .Diamonds)
+        let gift8 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, giftName: "蛋糕", tradeType: .Diamonds)
+        let gift9 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "box")!, giftPrice: 12, giftName: "礼盒", tradeType: .Diamonds)
+        let gift10 = GiftBean.init(giftId: 0, giftImage: UIImage.init(named: "cake")!, giftPrice: 12, giftName: "大蛋糕", tradeType: .Diamonds)
 
-        let array = [gift1,gift2,gift3,gift4,gift5,gift6,gift7,gift8,gift9,gift10,gift1,gift2,gift3,gift4,gift5,gift6]
+        let array = [gift1,gift2,gift3,gift4,gift5,gift6,gift7,gift8,gift9,gift10]
 
         giftView.initGiftView(giftViewHeight: 270, giftbeans: array, deletage: self)
         giftView.showGiftBoard(vc: self)
