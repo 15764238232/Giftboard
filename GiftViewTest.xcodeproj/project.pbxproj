@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21025D2B1F4586CE0080BC12 /* GiftBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21025D2A1F4586CE0080BC12 /* GiftBoard.xib */; };
 		2136BF0B1F25E10C003F1CF7 /* IMG_1818.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2136BF0A1F25E10C003F1CF7 /* IMG_1818.PNG */; };
 		218821E41F258EA400177E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218821E31F258EA400177E4A /* AppDelegate.swift */; };
 		218821E61F258EA400177E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218821E51F258EA400177E4A /* ViewController.swift */; };
@@ -15,10 +16,6 @@
 		218821EE1F258EA400177E4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218821EC1F258EA400177E4A /* LaunchScreen.storyboard */; };
 		218821F91F258EA400177E4A /* GiftViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218821F81F258EA400177E4A /* GiftViewTestTests.swift */; };
 		218822041F258EA400177E4A /* GiftViewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218822031F258EA400177E4A /* GiftViewTestUITests.swift */; };
-		218822131F258EDA00177E4A /* GiftBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218822121F258EDA00177E4A /* GiftBean.swift */; };
-		218822151F25909700177E4A /* GiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218822141F25909700177E4A /* GiftView.swift */; };
-		218822181F25920B00177E4A /* GiftCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218822161F25920B00177E4A /* GiftCollectionViewCell.swift */; };
-		218822191F25920B00177E4A /* GiftCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218822171F25920B00177E4A /* GiftCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21025D2A1F4586CE0080BC12 /* GiftBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftBoard.xib; sourceTree = "<group>"; };
+		2110B5B11F45843600589F23 /* GiftBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBean.swift; sourceTree = "<group>"; };
+		2110B5B21F45843600589F23 /* GiftCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCollectionViewCell.swift; sourceTree = "<group>"; };
+		2110B5B31F45843600589F23 /* GiftCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiftCollectionViewCell.xib; sourceTree = "<group>"; };
+		2110B5B41F45843600589F23 /* GiftBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftBoardView.swift; sourceTree = "<group>"; };
 		2136BF0A1F25E10C003F1CF7 /* IMG_1818.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1818.PNG; sourceTree = "<group>"; };
 		218821E01F258EA400177E4A /* GiftViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218821E31F258EA400177E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,10 +55,6 @@
 		218821FF1F258EA400177E4A /* GiftViewTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftViewTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218822031F258EA400177E4A /* GiftViewTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewTestUITests.swift; sourceTree = "<group>"; };
 		218822051F258EA400177E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		218822121F258EDA00177E4A /* GiftBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftBean.swift; sourceTree = "<group>"; };
-		218822141F25909700177E4A /* GiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftView.swift; sourceTree = "<group>"; };
-		218822161F25920B00177E4A /* GiftCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCollectionViewCell.swift; sourceTree = "<group>"; };
-		218822171F25920B00177E4A /* GiftCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +82,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2110B5B01F45843600589F23 /* GiftView */ = {
+			isa = PBXGroup;
+			children = (
+				2110B5B11F45843600589F23 /* GiftBean.swift */,
+				2110B5B21F45843600589F23 /* GiftCollectionViewCell.swift */,
+				2110B5B31F45843600589F23 /* GiftCollectionViewCell.xib */,
+				2110B5B41F45843600589F23 /* GiftBoardView.swift */,
+				21025D2A1F4586CE0080BC12 /* GiftBoard.xib */,
+			);
+			path = GiftView;
+			sourceTree = "<group>";
+		};
 		2136BF091F25E10C003F1CF7 /* screenshoot */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +125,8 @@
 		218821E21F258EA400177E4A /* GiftViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				2110B5B01F45843600589F23 /* GiftView */,
 				2136BF091F25E10C003F1CF7 /* screenshoot */,
-				218822111F258ECC00177E4A /* GiftView */,
 				218821E31F258EA400177E4A /* AppDelegate.swift */,
 				218821E51F258EA400177E4A /* ViewController.swift */,
 				218821E71F258EA400177E4A /* Main.storyboard */,
@@ -143,17 +153,6 @@
 				218822051F258EA400177E4A /* Info.plist */,
 			);
 			path = GiftViewTestUITests;
-			sourceTree = "<group>";
-		};
-		218822111F258ECC00177E4A /* GiftView */ = {
-			isa = PBXGroup;
-			children = (
-				218822121F258EDA00177E4A /* GiftBean.swift */,
-				218822141F25909700177E4A /* GiftView.swift */,
-				218822161F25920B00177E4A /* GiftCollectionViewCell.swift */,
-				218822171F25920B00177E4A /* GiftCollectionViewCell.xib */,
-			);
-			path = GiftView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +265,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218822191F25920B00177E4A /* GiftCollectionViewCell.xib in Resources */,
 				218821EE1F258EA400177E4A /* LaunchScreen.storyboard in Resources */,
 				218821EB1F258EA400177E4A /* Assets.xcassets in Resources */,
 				2136BF0B1F25E10C003F1CF7 /* IMG_1818.PNG in Resources */,
 				218821E91F258EA400177E4A /* Main.storyboard in Resources */,
+				21025D2B1F4586CE0080BC12 /* GiftBoard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,11 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218822181F25920B00177E4A /* GiftCollectionViewCell.swift in Sources */,
 				218821E61F258EA400177E4A /* ViewController.swift in Sources */,
 				218821E41F258EA400177E4A /* AppDelegate.swift in Sources */,
-				218822151F25909700177E4A /* GiftView.swift in Sources */,
-				218822131F258EDA00177E4A /* GiftBean.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
